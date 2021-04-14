@@ -1,0 +1,1 @@
+<?= $helpers["string"]->upperc($a) ?>

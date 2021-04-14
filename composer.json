@@ -1,0 +1,20 @@
+{
+   "name": "nourdine/zenplate",
+   "type": "library",
+   "description": "Simple template utility",
+   "keywords": ["template"],
+   "license": "MIT",
+   "authors": [
+      {
+         "name": "fabs aka (nourdine)"
+      }
+   ],
+   "require": {
+      "php": ">=5.3"
+   },
+   "autoload": {
+      "psr-0": {
+         "zenplate": "src/"
+      }
+   }
+}
