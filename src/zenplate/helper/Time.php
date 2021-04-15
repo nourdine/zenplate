@@ -4,16 +4,30 @@ namespace zenplate\helper;
 
 use zenplate\helper\Helper;
 
-class Time extends Helper {
+class Time extends Helper
+{
 
-   public function ago($time) {
-      $etime = time() - $time;
+   private static $now = null;
+
+   /**
+    * Returns a string describing how long ago the timestamp passed in was.
+    *
+    * @param int $time The timestamp
+    *
+    * @return string
+    */
+   public function ago(int $time)
+   {
+
+      $now = self::$now !== null ? self::$now : time();
+      $etime = $now - $time;
 
       if ($etime < 1) {
          return '0 seconds';
       }
 
-      $a = array(12 * 30 * 24 * 60 * 60 => 'year',
+      $a = array(
+         12 * 30 * 24 * 60 * 60 => 'year',
          30 * 24 * 60 * 60 => 'month',
          24 * 60 * 60 => 'day',
          60 * 60 => 'hour',
@@ -30,7 +44,16 @@ class Time extends Helper {
       }
    }
 
-   public function format($time, $format = "F Y") {
+   public function format(int $time, string $format = "F Y")
+   {
       return date($format, $time);
+   }
+
+   /**
+    * Used ONLY for testing purposes
+    */
+   public static function setTheNow(int $timestamp)
+   {
+      self::$now = $timestamp;
    }
 }

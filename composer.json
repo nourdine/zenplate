@@ -1,8 +1,10 @@
 {
    "name": "nourdine/zenplate",
    "type": "library",
-   "description": "Simple template utility",
-   "keywords": ["template"],
+   "description": "Simple template engine for PHP",
+   "keywords": [
+      "template"
+   ],
    "license": "MIT",
    "authors": [
       {
@@ -10,11 +12,17 @@
       }
    ],
    "require": {
-      "php": ">=5.3"
+      "php": ">=7.4.3",
+      "phpunit/phpunit": "^9.5"
    },
    "autoload": {
       "psr-0": {
          "zenplate": "src/"
       }
+   },
+   "scripts": {
+      "test": [
+         "vendor/bin/phpunit --testdox --debug"
+      ]
    }
 }

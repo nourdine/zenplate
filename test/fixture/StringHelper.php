@@ -2,9 +2,11 @@
 
 use zenplate\helper\Helper;
 
-class StringHelper extends Helper {
+class StringHelper extends Helper
+{
 
-   public function upperc($str) {
+   public function upperc($str)
+   {
       return strtoupper($str);
    }
 }
