@@ -34,7 +34,7 @@ $html = Zenplate::load("path-to-your-templates/template-1.php", [
 
 Assuming the template is defined like so:
 
-```php
+```html
 // file: template-1.php
 
 <p>Hello, this is the library <?= $name ?> which is currently at version <?= $version ?></p>
