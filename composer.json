@@ -1,7 +1,7 @@
 {
    "name": "nourdine/zenplate",
    "type": "library",
-   "description": "Simple template engine for PHP",
+   "description": "Simple template manager for PHP",
    "keywords": [
       "template"
    ],
