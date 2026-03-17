@@ -77,7 +77,7 @@ class TimeTest extends TestCase
       $this->assertEquals($this->timeHelper->ago($this->now - 3601), "1 hour ago");
    }
 
-      public function testRightUnder2HoursAgo()
+   public function testRightUnder2HoursAgo()
    {
       $this->assertEquals($this->timeHelper->ago($this->now - 7119), "1 hour ago");
    }

@@ -4,7 +4,9 @@
    "description": "A concise template manager that makes sense",
    "license": "MIT",
    "require": {
-      "php": ">=8",
+      "php": ">=8"
+   },
+   "require-dev": {
       "phpunit/phpunit": "^9.5"
    },
    "autoload": {
