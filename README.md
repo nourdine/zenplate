@@ -51,11 +51,11 @@ We will then eventually obtain this markup:
 If you want to spice up Zenplate, you can do so by loading custom helpers that you are going to develop youself. For instance, let's say we want to add a trivial helper which perform some simple text transformation. We can do it like so:
 
 ```php
-use zenplate\helper\Helper;
+use Zenplate\Helper\Helper;
 
 class StringHelper extends Helper
 {
-   public function upperc($str)
+   public function upperc(string $str): string
    {
       return strtoupper($str);
    }
