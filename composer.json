@@ -2,27 +2,19 @@
    "name": "nourdine/zenplate",
    "type": "library",
    "description": "A concise template manager that makes sense",
-   "keywords": [
-      "template"
-   ],
    "license": "MIT",
-   "authors": [
-      {
-         "name": "fabs aka (nourdine)"
-      }
-   ],
    "require": {
-      "php": ">=7.4.3",
+      "php": ">=8",
       "phpunit/phpunit": "^9.5"
    },
    "autoload": {
-      "psr-0": {
-         "zenplate": "src/"
+      "psr-4": {
+         "Zenplate\\": "src/"
       }
    },
    "scripts": {
-      "test": [
-         "vendor/bin/phpunit --testdox --debug"
-      ]
+      "test": {
+         "test": "phpunit ./test"
+      }
    }
 }

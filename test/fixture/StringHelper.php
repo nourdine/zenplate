@@ -1,11 +1,12 @@
 <?php
 
-use zenplate\helper\Helper;
+declare(strict_types=1);
+
+use Zenplate\Helper\Helper;
 
 class StringHelper extends Helper
 {
-
-   public function upperc($str)
+   public function upperc(string $str): string
    {
       return strtoupper($str);
    }

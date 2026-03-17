@@ -1,14 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 use PHPUnit\Framework\TestCase;
-use zenplate\helper\MessagePrinter;
+use Zenplate\Helper\MessagePrinter;
 
 class MessagePrinterTest extends TestCase
 {
-
-   /**
-    * @var MessagePrinter 
-    */
    private $printer;
 
    public function setUp(): void
@@ -23,7 +21,7 @@ class MessagePrinterTest extends TestCase
 
    public function testPrintingOfASucccessTransientMessage()
    {
-      $this->assertEquals("<div class='ui-message success transient'>ok</div>", $this->printer->print("ok", "s", true));
+      $this->assertEquals("<div class='zenplate-ui-message success transient'>ok</div>", $this->printer->print("ok", "s", true));
    }
 
    public function testPrintingOfAnUnknownMessageType()

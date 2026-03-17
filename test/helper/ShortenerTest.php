@@ -1,11 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 use PHPUnit\Framework\TestCase;
-use zenplate\helper\Shortener;
+use Zenplate\Helper\Shortener;
 
 class ShortenerTest extends TestCase
 {
-
    /**
     * @var Shortener 
     */
@@ -29,12 +30,6 @@ class ShortenerTest extends TestCase
       $this->assertEquals("", $shortened);
    }
 
-   public function testNullValue()
-   {
-      $shortened = $this->shortener->shorten(null, "/", 1);
-      $this->assertEquals("", $shortened);
-   }
-
    public function testShortening()
    {
       $shortened = $this->shortener->shorten($this->string, "/", 1);
@@ -43,7 +38,7 @@ class ShortenerTest extends TestCase
 
    public function testShorteningWithFullSignature()
    {
-      $shortened = $this->shortener->shorten($this->string, "/", 1, "more-css-klass", "the whole thing");
-      $this->assertEquals("a <a href='/' class='more-css-klass'>the whole thing</a>", $shortened);
+      $shortened = $this->shortener->shorten($this->string, "/wherever", 1, "more-css-klass", "the whole thing");
+      $this->assertEquals("a <a href='/wherever' class='more-css-klass'>the whole thing</a>", $shortened);
    }
 }

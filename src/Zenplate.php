@@ -1,15 +1,16 @@
 <?php
 
-namespace zenplate;
+declare(strict_types=1);
 
-use zenplate\helper\Helper;
-use zenplate\helper\MessagePrinter;
-use zenplate\helper\Shortener;
-use zenplate\helper\Time;
+namespace Zenplate;
+
+use Zenplate\Helper\Helper;
+use Zenplate\Helper\MessagePrinter;
+use Zenplate\Helper\Shortener;
+use Zenplate\Helper\Time;
 
 class Zenplate
 {
-
    protected static $helpers = [];
 
    public static function load($path, array $data = [])

@@ -55,7 +55,6 @@ use zenplate\helper\Helper;
 
 class StringHelper extends Helper
 {
-
    public function upperc($str)
    {
       return strtoupper($str);
@@ -75,13 +74,8 @@ Once that's done, in a template loaded using Zenplate, we will be in the positio
 
 ### Native helpers
 
-Zenplate comes with some pre-loaded helpers. Have a good look [at this folder](https://github.com/nourdine/zenplate/tree/master/src/zenplate/helper) to see what they are like and what they are for. 
+Zenplate comes with some pre-loaded helpers. Have a good look [at this folder](https://github.com/nourdine/zenplate/tree/master/src/Helper) to see what they are like and what they are for. 
 
-They are registered as `time`, `shortener` and `mprinter` if you ever wanted to use them in your templates.
+They are registered as `time`, `shortener` and `mprinter`, if you ever wanted to use them in your templates.
 
-### Running Unit Tests
-
-```
-composer install
-composer run-script test
-```
+Have a good one!

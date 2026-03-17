@@ -1,29 +1,32 @@
 <?php
 
-namespace zenplate\helper;
+declare(strict_types=1);
 
-use zenplate\helper\Helper;
+namespace Zenplate\Helper;
+
+use RuntimeException;
+use Zenplate\Helper\Helper;
 
 class MessagePrinter extends Helper
 {
-
    /**
     * Prints an element containing a success, failure or warning message.
     *
     * @param string $message The message to display
-    * @param string $type s|f|w namely success, failure and warning
-    * @param boolean $transient Shall the message be transient?
+    * @param string $type s|f|w Namely success, failure and warning. An extra css class will be added accordingly
+    * @param boolean $transient Whether the message be transient. An extra css class will be added accordingly
     *
+    * @throws RuntimeException
     * @return string
     */
-   public function print($message, $type, $transient = false)
+   public function print($message, $type, $transient = false): string
    {
       $typeCssKlass = $this->getCssKlass($type);
       $transientCssKlass = $transient ? "transient" : "";
-      return "<div class='ui-message {$typeCssKlass} {$transientCssKlass}'>{$message}</div>";
+      return "<div class='zenplate-ui-message {$typeCssKlass} {$transientCssKlass}'>{$message}</div>";
    }
 
-   private function getCssKlass($type)
+   private function getCssKlass($type): string
    {
       if ($type === "s") {
          return "success";
