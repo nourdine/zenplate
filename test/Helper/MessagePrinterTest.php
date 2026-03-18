@@ -19,9 +19,34 @@ class MessagePrinterTest extends TestCase
       $this->printer = null;
    }
 
-   public function testPrintingOfASucccessTransientMessage()
+   public function testPrintingOfASuccessMessage()
    {
-      $this->assertEquals("<div class='zenplate-ui-message success transient'>ok</div>", $this->printer->print("ok", "s", true));
+      $this->assertEquals("<div class='zenplate-ui-message success static'>message</div>", $this->printer->print("message", "s"));
+   }
+
+   public function testPrintingOfAWarningMessage()
+   {
+      $this->assertEquals("<div class='zenplate-ui-message warning static'>message</div>", $this->printer->print("message", "w"));
+   }
+
+   public function testPrintingOfAnFailureMessage()
+   {
+      $this->assertEquals("<div class='zenplate-ui-message failure static'>message</div>", $this->printer->print("message", "f"));
+   }
+
+   public function testPrintingOfASuccessTransientMessage()
+   {
+      $this->assertEquals("<div class='zenplate-ui-message success transient'>message</div>", $this->printer->print("message", "s", true));
+   }
+
+   public function testPrintingOfAWarningTransientMessage()
+   {
+      $this->assertEquals("<div class='zenplate-ui-message warning transient'>message</div>", $this->printer->print("message", "w", true));
+   }
+
+   public function testPrintingOfAnFailureTransientMessage()
+   {
+      $this->assertEquals("<div class='zenplate-ui-message failure transient'>message</div>", $this->printer->print("message", "f", true));
    }
 
    public function testPrintingOfAnUnknownMessageType()

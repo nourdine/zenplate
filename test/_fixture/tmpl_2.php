@@ -1,0 +1,1 @@
+<?= isset($a) ? "\$a is set" : "\$a is not set" ?>

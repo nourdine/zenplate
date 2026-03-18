@@ -19,14 +19,14 @@ class MessagePrinter extends Helper
     * @throws RuntimeException
     * @return string
     */
-   public function print($message, $type, $transient = false): string
+   public function print(string $message, string $type, $transient = false): string
    {
       $typeCssKlass = $this->getCssKlass($type);
-      $transientCssKlass = $transient ? "transient" : "";
+      $transientCssKlass = $transient ? "transient" : "static";
       return "<div class='zenplate-ui-message {$typeCssKlass} {$transientCssKlass}'>{$message}</div>";
    }
 
-   private function getCssKlass($type): string
+   private function getCssKlass(string $type): string
    {
       if ($type === "s") {
          return "success";
