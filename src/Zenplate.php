@@ -13,7 +13,7 @@ class Zenplate
 {
    protected static $helpers = [];
 
-   public static function load($path, array $data = [])
+   public static function load($path, array $data = []): void
    {
       $helpers = self::$helpers;
       extract($data);
@@ -22,7 +22,7 @@ class Zenplate
       return ob_get_clean();
    }
 
-   public static function addHelper(string $name, Helper $helper)
+   public static function addHelper(string $name, Helper $helper): void
    {
       self::$helpers[$name] = $helper;
    }
