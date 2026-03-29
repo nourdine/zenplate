@@ -13,7 +13,7 @@ class Zenplate
 {
    protected static $helpers = [];
 
-   public static function load($path, array $data = []): void
+   public static function load($path, array $data = [])
    {
       $helpers = self::$helpers;
       extract($data);
