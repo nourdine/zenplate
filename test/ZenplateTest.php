@@ -28,8 +28,10 @@ class ZenplateTest extends TestCase
          "c" => 3
       ]);
 
+      // the variable $a is only shared with tmpl_1.php 
       $html = Zenplate::load(__DIR__ . "/_fixture/tmpl_2.php", [
-         "greet" => "hello"
+         "b" => 2,
+         "c" => 3
       ]);
 
       $this->assertEquals($html, "\$a is not set");

@@ -76,6 +76,6 @@ Once the new helper added, we will be in the position to do the following inside
 
 Zenplate comes with some pre-loaded native helpers. Have a good look [at this folder](https://github.com/nourdine/zenplate/tree/master/src/Helper) to see what they are like.
 
-If you ever wanted to use them in your templates, they can be accessed using the names `time`, `shortener` and `mprinter`.
+If you ever wanted to use them in your templates, they can be accessed using the names `sub`, `time`, `shortener` and `mprinter`.
 
 Have a good one!

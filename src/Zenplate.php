@@ -7,13 +7,14 @@ namespace Zenplate;
 use Zenplate\Helper\Helper;
 use Zenplate\Helper\MessagePrinter;
 use Zenplate\Helper\Shortener;
+use Zenplate\Helper\Sub;
 use Zenplate\Helper\Time;
 
-class Zenplate
+final class Zenplate
 {
-   protected static $helpers = [];
+   private static $helpers = [];
 
-   public static function load($path, array $data = [])
+   public static function load(string $path, array $data = []): string
    {
       $helpers = self::$helpers;
       extract($data);
@@ -28,6 +29,7 @@ class Zenplate
    }
 }
 
+Zenplate::addHelper("sub", new Sub());
 Zenplate::addHelper("time", new Time());
 Zenplate::addHelper("shortener", new Shortener());
 Zenplate::addHelper("mprinter", new MessagePrinter());
